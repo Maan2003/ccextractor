@@ -314,3 +314,4 @@ struct encoder_ctx *update_encoder_list_cinfo(struct lib_ccx_ctx *ctx, struct ca
 struct encoder_ctx * update_encoder_list(struct lib_ccx_ctx *ctx);
 struct encoder_ctx *get_encoder_by_pn(struct lib_ccx_ctx *ctx, int pn);
 #endif
+struct lib_cc_decode* ccx_list_head_to_cc_decode(struct list_head *ptr);

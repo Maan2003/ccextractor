@@ -433,3 +433,6 @@ struct encoder_ctx *update_encoder_list(struct lib_ccx_ctx *ctx)
 {
 	return update_encoder_list_cinfo(ctx, NULL);
 }
+struct lib_cc_decode* ccx_list_head_to_cc_decode(struct list_head *ptr) {
+        return container_of(ptr, struct lib_cc_decode, list);
+}
