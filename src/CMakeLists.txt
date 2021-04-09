@@ -225,8 +225,9 @@ if (PKG_CONFIG_FOUND AND WITH_HARDSUBX)
   set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DENABLE_HARDSUBX")
 endif (PKG_CONFIG_FOUND AND WITH_HARDSUBX)
 
+link_directories ("${PROJECT_SOURCE_DIR}/../cea-708-rewrite/target/release")
 add_executable (ccextractor ${SOURCEFILE} ${FREETYPE_SOURCE} ${UTF8PROC_SOURCE})
-target_link_libraries (ccextractor ${EXTRA_LIBS})
+target_link_libraries (ccextractor cea_708_rewrite ${EXTRA_LIBS})
 target_include_directories (ccextractor PUBLIC ${EXTRA_INCLUDES})
 
 install (TARGETS ccextractor DESTINATION bin)
