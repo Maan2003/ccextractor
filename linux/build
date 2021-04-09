@@ -61,7 +61,7 @@ echo "Running pre-build script..."
 ./pre-build.sh
 echo "Trying to compile..."
 
-out=$((LC_ALL=C gcc $BLD_FLAGS $BLD_INCLUDE -o ccextractor $BLD_SOURCES $BLD_LINKER)2>&1)
+out=$((LC_ALL=C gcc $BLD_FLAGS $BLD_INCLUDE -L ../cea-708-rewrite/target/release -l cea_708_rewrite -o ccextractor $BLD_SOURCES $BLD_LINKER)2>&1)
 res=$?
 if [[ $out == *"gcc: command not found"* ]]
 then
